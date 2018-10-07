@@ -1,5 +1,3 @@
-from nltk import sent_tokenize
-
 
 class Readfile:
 
@@ -15,9 +13,7 @@ class Readfile:
 
     def __sent_token(self):
         for lines in self.text:
-            temp = sent_tokenize(lines)
-            for line in temp:
-                self.sent_token.append(line)
+            self.sent_token.append(lines)
 
     def __sentence_to_word(self):
         for line in self.sent_token:
@@ -63,7 +59,6 @@ class Readfile:
                 self.tag_dictionary[word][tag] += 1
             else:
                 self.tag_dictionary[word] = {tag: 1}
-
         else:
             self.tag_dictionary[word] = {tag: 1}
 
