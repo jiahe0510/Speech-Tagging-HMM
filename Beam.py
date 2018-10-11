@@ -26,7 +26,8 @@ index = 0
 success = 0
 total_words = 0
 total_unknown = 0
-
+total_index = len(test_line)
+percent = total_index/10
 
 for line in test_line:
     tok_word = sp.my_tokenize(line)
@@ -41,5 +42,9 @@ for line in test_line:
         total_words += 1
         if tok_word_tag[time].count(result_tag[time]):
             success += 1
+
+    if index > percent:
+        print(str(percent/total_index*100) + "% has been tested")
+        percent += total_index / 10
 
 print(str(success / total_words * 100) + "%")
