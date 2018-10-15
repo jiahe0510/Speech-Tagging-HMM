@@ -37,6 +37,8 @@ for line in test_line:
 
     index += 1
     result_tag = sp.my_tokenize(result)
+    print(tok_word_tag)
+    print(result)
 
     for time in range(len(result_tag)):
         total_words += 1

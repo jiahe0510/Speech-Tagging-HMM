@@ -159,7 +159,7 @@ class Dictionarysearch:
             for row in range(tag_length):
                 current_tag = tag_list[row]
                 if current_tag not in t_set:
-                    result[row].append(' ')
+                    result[row].append(result[row][col-1] + str(current_tag) + ' ')
                     continue
                 self.max_probability_beam(col, row, next_word, current_tag, matrix, result,
                                      hmm_dictionary, tag_dictionary, word_dictionary, tag_count_dictionary,
